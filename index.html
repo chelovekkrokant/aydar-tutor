@@ -53,14 +53,14 @@
 
   .hero{
     position: relative;
-    min-height: 74vh;
+    min-height: 88vh;
     display: flex;
     align-items: flex-end;
     background-image:
       linear-gradient(180deg, rgba(20,26,38,0.2) 0%, rgba(18,22,30,0.5) 62%, rgba(14,17,23,0.86) 100%),
       url('hero.jpg');
     background-size: cover;
-    background-position: center 68%;
+    background-position: center bottom;
   }
 
   .hero-inner{
@@ -93,8 +93,24 @@
     font-weight: 400;
   }
 
+  .cta-button{
+    display: inline-block;
+    padding: 14px 30px;
+    background: var(--red);
+    color: var(--white);
+    font-weight: 600;
+    font-size: 0.95rem;
+    text-decoration: none;
+    letter-spacing: 0.01em;
+    transition: background-color .15s ease;
+  }
+
+  .cta-button:hover{ background: #9C3626; }
+
+  .hero .cta-button{ margin-top: 32px; }
+
   .hero .scroll-hint{
-    margin-top: 40px;
+    margin-top: 28px;
     color: #B7BECD;
     font-size: 0.85rem;
     border-top: 1px solid rgba(255,255,255,0.25);
@@ -214,6 +230,17 @@
     margin-bottom: 16px;
   }
 
+  .side-trial{
+    background: rgba(184,65,47,0.08);
+    border: 1px solid rgba(184,65,47,0.35);
+    color: var(--red);
+    font-size: 0.82rem;
+    font-weight: 600;
+    text-align: center;
+    padding: 10px 12px;
+    margin-bottom: 18px;
+  }
+
   .side-grade-row{
     display: flex;
     justify-content: space-between;
@@ -224,6 +251,14 @@
   }
 
   .side-grade-row:last-child{ border-bottom: none; padding-bottom: 0; }
+
+  .side-cta{
+    display: block;
+    text-align: center;
+    margin-top: 22px;
+    padding: 13px;
+    font-size: 0.9rem;
+  }
 
   .side-grade-row .level{
     font-size: 0.9rem;
@@ -244,6 +279,35 @@
     font-size: 1.05rem;
     color: var(--red);
     white-space: nowrap;
+    font-weight: 600;
+  }
+
+  /* ---------- REVIEWS ---------- */
+
+  .reviews-grid{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    margin-top: 28px;
+  }
+
+  .review-card{
+    background: var(--white);
+    border: 1px solid var(--paper-line);
+    padding: 26px 24px;
+  }
+
+  .review-card p{
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    color: var(--graphite);
+    font-size: 0.95rem;
+    margin-bottom: 18px;
+  }
+
+  .review-card .review-author{
+    font-size: 0.82rem;
+    color: var(--graphite-soft);
     font-weight: 600;
   }
 
@@ -322,6 +386,12 @@
     }
   }
 
+  @media (max-width: 820px){
+    .reviews-grid{
+      grid-template-columns: 1fr;
+    }
+  }
+
   @media (max-width: 620px){
     .contact-grid{
       grid-template-columns: 1fr;
@@ -340,7 +410,8 @@
     <div class="hero-eyebrow">Репетитор по математике</div>
     <h1>Айдар Гайфутдинов Рамилевич</h1>
     <p class="role">объясняю так, чтобы задача перестала быть страшной</p>
-    <div class="scroll-hint">4 курс «Программной инженерии», ЛЭТИ — репетиторствую 2 года и несколько месяцев</div>
+    <a class="cta-button" href="https://t.me/med_c_molokom" target="_blank" rel="noopener">Написать в Telegram</a>
+    <div class="scroll-hint">Опыт в преподавании больше 2 лет</div>
   </div>
 </div>
 
@@ -351,14 +422,15 @@
       <div class="profile-main">
         <div class="section-label">Обо мне</div>
         <h2>Учу математику понимать, а не бояться</h2>
-        <p>Учусь на 4 курсе «Программной инженерии» в ЛЭТИ, поступил с конкурсным баллом 291. Окончил гимназию с красным аттестатом.</p>
-        <p>Пока не вёл выпускников через ЕГЭ — специализируюсь на том, чтобы подтянуть текущую успеваемость, закрыть долги по допсессии и подготовиться к разделам вроде математического анализа.</p>
+        <p>Готовлю к экзаменам — ОГЭ, профильному ЕГЭ — и параллельно подтягиваю текущую успеваемость: закрываю пробелы, разбираю тему, которая «повисла» после пропущенных уроков. Помогаю с адаптацией к курсу высшей математике в вузе.</p>
+        <p>Учусь на 4 курсе «Программной инженерии» в ЛЭТИ (красный аттестат, конкурсный балл 291 при поступлении), поэтому объясняю на языке, который ещё помню сам — без сложных терминов, через понятную логику.</p>
+        <p>Все занятия — с наглядными примерами и дополнительными материалами, к которым можно возвращаться самостоятельно. Отвечаю на вопросы и вне занятий, слежу за прогрессом и даю обратную связь по домашним заданиям. Сам всегда учился без репетиторов — поэтому хорошо чувствую, когда ученику нужно поработать самому, а когда нужна помощь со стороны.</p>
         <ul class="checklist">
-          <li>ЕГЭ по математике — 88 баллов</li>
           <li>ЕГЭ по физике — 99 баллов</li>
+          <li>ЕГЭ по математике — 88 баллов</li>
           <li>ЕГЭ по русскому языку — 94 балла</li>
           <li>Красный аттестат гимназии</li>
-          <li>2 года и несколько месяцев практики репетиторства</li>
+          <li>Больше 2 лет опыта и практики преподавания математики</li>
         </ul>
       </div>
 
@@ -372,23 +444,48 @@
 
           <div class="side-divider"></div>
 
-          <div class="side-label">Кому и по какой цене — 60 минут</div>
+          <div class="side-label">Кому и по какой цене — онлайн (Яндекс Телемост), 60 минут</div>
+
+          <div class="side-trial">Первое занятие — 30 минут бесплатно</div>
 
           <div class="side-grade-row">
-            <div class="level">5–9 классы<span>школа, ОГЭ</span></div>
+            <div class="level">5–8 классы<span>школа, повышение успеваемости</span></div>
             <div class="price">1 200 ₽</div>
           </div>
           <div class="side-grade-row">
-            <div class="level">10–11 классы<span>профиль, ЕГЭ</span></div>
+            <div class="level">9–11 классы<span>подготовка к ОГЭ/ЕГЭ, повышение успеваемости</span></div>
             <div class="price">1 500 ₽</div>
           </div>
           <div class="side-grade-row">
-            <div class="level">1–2 курс<span>матанализ, допсессии</span></div>
+            <div class="level">1–2 курс<span>математический анализ, статистика</span></div>
             <div class="price">1 800 ₽</div>
           </div>
+
+          <a class="cta-button side-cta" href="https://t.me/med_c_molokom" target="_blank" rel="noopener">Написать в Telegram</a>
         </div>
       </div>
 
+    </div>
+  </div>
+</section>
+
+<section class="reviews">
+  <div class="wrap-wide">
+    <div class="section-label">Отзывы</div>
+    <h2>Что говорят родители и ученики</h2>
+    <div class="reviews-grid">
+      <div class="review-card">
+        <p>«Сын учился в 6 классе, математика хромала. Репетитор нашёл подход, объясняет спокойно и понятно. За 3 месяца вышли с тройки на твёрдую четвёрку, а главное — ребёнок перестал бояться предмета. Спасибо!»</p>
+        <div class="review-author">Ученик Александр, 6 класс</div>
+      </div>
+      <div class="review-card">
+        <p>«Нужен был репетитор для спокойствия ребёнка — с геометрией были серьёзные проблемы. Всё разобрали, объяснили понятно. ОГЭ сдали на 5 без стресса»</p>
+        <div class="review-author">Ученица Анастасия, 9 класс</div>
+      </div>
+      <div class="review-card">
+        <p>«Школьная математика была слабой, а в универе — матанализ, линал и матстат. С нуля самой разобраться было невозможно. Репетитор помог адаптироваться, особенно с анализом. Объясняет наглядно, с рисунками (это правда помогает). Закрылась на отлично — сама не ожидала :)»</p>
+        <div class="review-author">Ученица Елизавета, 1 курс</div>
+      </div>
     </div>
   </div>
 </section>
@@ -418,10 +515,6 @@
     </div>
   </div>
 </section>
-
-<footer>
-  © 2026 Айдар Гайфутдинов · Репетитор по математике
-</footer>
 
 </body>
 </html>
