@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Айдар Гайфутдинов — репетитор по математике</title>
+<meta name="description" content="Репетитор по математике для 5–11 классов и 1–2 курсов. Студент ЛЭТИ, красный аттестат, 99/88/94 баллов ЕГЭ.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink: #2B4570;
+    --ink-dark: #1D3050;
+    --paper: #F7F4EE;
+    --paper-line: #DAD4C4;
+    --graphite: #23262B;
+    --graphite-soft: #565B63;
+    --red: #B8412F;
+    --white: #FFFFFF;
+  }
+
+  *{ box-sizing: border-box; margin:0; padding:0; }
+
+  html{ scroll-behavior: smooth; }
+
+  body{
+    font-family: 'Inter', -apple-system, sans-serif;
+    background: var(--paper);
+    color: var(--graphite);
+    line-height: 1.55;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  h1, h2, h3{
+    font-family: 'Fraunces', Georgia, serif;
+    color: var(--ink-dark);
+    font-weight: 600;
+    line-height: 1.15;
+  }
+
+  a{ color: inherit; }
+
+  img{ max-width: 100%; display:block; }
+
+  .wrap{
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+
+  /* ---------- HERO ---------- */
+
+  .hero{
+    position: relative;
+    min-height: 74vh;
+    display: flex;
+    align-items: flex-end;
+    background-image:
+      linear-gradient(180deg, rgba(20,26,38,0.2) 0%, rgba(18,22,30,0.5) 62%, rgba(14,17,23,0.86) 100%),
+      url('hero.jpg');
+    background-size: cover;
+    background-position: center 68%;
+  }
+
+  .hero-inner{
+    width: 100%;
+    padding: 48px 24px 56px;
+    max-width: 760px;
+    margin: 0 auto;
+  }
+
+  .hero-eyebrow{
+    color: #C9CFDD;
+    font-size: 0.95rem;
+    letter-spacing: 0.02em;
+    margin-bottom: 14px;
+  }
+
+  .hero h1{
+    color: var(--white);
+    font-size: clamp(2.1rem, 6vw, 3.2rem);
+    font-weight: 600;
+    max-width: 12ch;
+  }
+
+  .hero p.role{
+    color: #D9DEE8;
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    font-size: clamp(1.05rem, 2.4vw, 1.3rem);
+    margin-top: 10px;
+    font-weight: 400;
+  }
+
+  .hero .scroll-hint{
+    margin-top: 40px;
+    color: #B7BECD;
+    font-size: 0.85rem;
+    border-top: 1px solid rgba(255,255,255,0.25);
+    padding-top: 14px;
+    max-width: 320px;
+  }
+
+  /* ---------- SECTION SHARED ---------- */
+
+  section{
+    padding: 76px 0;
+  }
+
+  section + section{
+    border-top: 1px solid var(--paper-line);
+  }
+
+  .section-label{
+    font-size: 0.9rem;
+    color: var(--graphite-soft);
+    margin-bottom: 10px;
+  }
+
+  /* ---------- PROFILE (about + pricing, side by side) ---------- */
+
+  .wrap-wide{
+    max-width: 1040px;
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+
+  .profile-grid{
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    gap: 48px;
+    align-items: start;
+  }
+
+  .profile-main h2{
+    font-size: clamp(1.5rem, 4vw, 1.9rem);
+    margin-bottom: 16px;
+  }
+
+  .profile-main p{
+    color: var(--graphite);
+    max-width: 54ch;
+    margin-bottom: 14px;
+  }
+
+  .checklist{
+    list-style: none;
+    margin-top: 22px;
+  }
+
+  .checklist li{
+    position: relative;
+    padding-left: 30px;
+    margin-bottom: 11px;
+    color: var(--graphite);
+  }
+
+  .checklist li::before{
+    content: "✓";
+    position: absolute;
+    left: 0;
+    top: 0;
+    color: var(--red);
+    font-family: 'Fraunces', serif;
+    font-weight: 600;
+    font-size: 1.05rem;
+  }
+
+  .side-card{
+    background: var(--white);
+    border: 1px solid var(--paper-line);
+    padding: 30px 26px 32px;
+    position: sticky;
+    top: 28px;
+  }
+
+  .side-card .avatar{
+    width: 116px;
+    height: 116px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin: 0 auto 18px;
+    border: 3px solid var(--paper);
+    box-shadow: 0 0 0 1px var(--paper-line);
+  }
+
+  .side-card .avatar img{ width:100%; height:100%; object-fit: cover; }
+
+  .side-card .side-name{
+    text-align: center;
+    font-family: 'Fraunces', serif;
+    font-weight: 600;
+    font-size: 1.15rem;
+    color: var(--ink-dark);
+    margin-bottom: 4px;
+  }
+
+  .side-card .side-role{
+    text-align: center;
+    color: var(--graphite-soft);
+    font-size: 0.85rem;
+    margin-bottom: 26px;
+  }
+
+  .side-divider{
+    border-top: 1px solid var(--paper-line);
+    margin: 0 0 20px;
+  }
+
+  .side-card .side-label{
+    font-size: 0.8rem;
+    color: var(--graphite-soft);
+    margin-bottom: 16px;
+  }
+
+  .side-grade-row{
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 12px;
+    padding: 13px 0;
+    border-bottom: 1px solid var(--paper-line);
+  }
+
+  .side-grade-row:last-child{ border-bottom: none; padding-bottom: 0; }
+
+  .side-grade-row .level{
+    font-size: 0.9rem;
+    color: var(--graphite);
+    font-weight: 500;
+  }
+
+  .side-grade-row .level span{
+    display: block;
+    font-size: 0.72rem;
+    color: var(--graphite-soft);
+    font-weight: 400;
+    margin-top: 2px;
+  }
+
+  .side-grade-row .price{
+    font-family: 'Fraunces', serif;
+    font-size: 1.05rem;
+    color: var(--red);
+    white-space: nowrap;
+    font-weight: 600;
+  }
+
+  /* ---------- CONTACT ---------- */
+
+  .contact{
+    background: var(--ink-dark);
+    color: var(--white);
+    position: relative;
+  }
+
+  .contact h2{ color: var(--white); font-size: clamp(1.5rem, 4vw, 1.9rem); margin-bottom: 10px; }
+
+  .contact > .wrap > p{
+    color: #C7CEDD;
+    max-width: 46ch;
+    margin-bottom: 40px;
+  }
+
+  .contact-grid{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+
+  .contact-card{
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.14);
+    padding: 22px 18px 24px;
+    text-align: center;
+  }
+
+  .contact-card .qr{
+    width: 108px;
+    height: 108px;
+    margin: 0 auto 16px;
+    background: var(--white);
+    padding: 8px;
+  }
+
+  .contact-card .qr img{ width:100%; height:100%; }
+
+  .contact-card .label{
+    font-size: 0.78rem;
+    color: #A9B2C6;
+    margin-bottom: 6px;
+  }
+
+  .contact-card a{
+    text-decoration: none;
+    font-size: 0.95rem;
+    font-weight: 500;
+    word-break: break-word;
+    border-bottom: 1px solid rgba(255,255,255,0.3);
+    padding-bottom: 2px;
+  }
+
+  .contact-card a:hover{ border-bottom-color: var(--white); }
+
+  footer{
+    padding: 28px 0 40px;
+    text-align: center;
+    color: var(--graphite-soft);
+    font-size: 0.82rem;
+  }
+
+  /* ---------- RESPONSIVE ---------- */
+
+  @media (max-width: 820px){
+    .profile-grid{
+      grid-template-columns: 1fr;
+      gap: 36px;
+    }
+    .side-card{
+      position: static;
+    }
+  }
+
+  @media (max-width: 620px){
+    .contact-grid{
+      grid-template-columns: 1fr;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce){
+    html{ scroll-behavior: auto; }
+  }
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="hero-inner">
+    <div class="hero-eyebrow">Репетитор по математике</div>
+    <h1>Айдар Гайфутдинов Рамилевич</h1>
+    <p class="role">объясняю так, чтобы задача перестала быть страшной</p>
+    <div class="scroll-hint">4 курс «Программной инженерии», ЛЭТИ — репетиторствую 2 года и несколько месяцев</div>
+  </div>
+</div>
+
+<section class="profile">
+  <div class="wrap-wide">
+    <div class="profile-grid">
+
+      <div class="profile-main">
+        <div class="section-label">Обо мне</div>
+        <h2>Учу математику понимать, а не бояться</h2>
+        <p>Учусь на 4 курсе «Программной инженерии» в ЛЭТИ, поступил с конкурсным баллом 291. Окончил гимназию с красным аттестатом.</p>
+        <p>Пока не вёл выпускников через ЕГЭ — специализируюсь на том, чтобы подтянуть текущую успеваемость, закрыть долги по допсессии и подготовиться к разделам вроде математического анализа.</p>
+        <ul class="checklist">
+          <li>ЕГЭ по математике — 88 баллов</li>
+          <li>ЕГЭ по физике — 99 баллов</li>
+          <li>ЕГЭ по русскому языку — 94 балла</li>
+          <li>Красный аттестат гимназии</li>
+          <li>2 года и несколько месяцев практики репетиторства</li>
+        </ul>
+      </div>
+
+      <div class="profile-side">
+        <div class="side-card">
+          <div class="avatar">
+            <img src="portrait.jpg" alt="Айдар Гайфутдинов">
+          </div>
+          <div class="side-name">Айдар Гайфутдинов</div>
+          <div class="side-role">Репетитор по математике</div>
+
+          <div class="side-divider"></div>
+
+          <div class="side-label">Кому и по какой цене — 60 минут</div>
+
+          <div class="side-grade-row">
+            <div class="level">5–9 классы<span>школа, ОГЭ</span></div>
+            <div class="price">1 200 ₽</div>
+          </div>
+          <div class="side-grade-row">
+            <div class="level">10–11 классы<span>профиль, ЕГЭ</span></div>
+            <div class="price">1 500 ₽</div>
+          </div>
+          <div class="side-grade-row">
+            <div class="level">1–2 курс<span>матанализ, допсессии</span></div>
+            <div class="price">1 800 ₽</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section class="contact">
+  <div class="wrap">
+    <div class="section-label" style="color:#A9B2C6;">Открыт набор</div>
+    <h2>Связаться со мной</h2>
+    <p>Напишите в телеграм или вк — отвечаю быстро. Можно отсканировать QR-код или перейти по ссылке.</p>
+
+    <div class="contact-grid">
+      <div class="contact-card">
+        <div class="qr"><img src="qr-email.png" alt="QR-код почты"></div>
+        <div class="label">Почта</div>
+        <a href="mailto:aydar.gayfutdinov@gmail.com">aydar.gayfutdinov@gmail.com</a>
+      </div>
+      <div class="contact-card">
+        <div class="qr"><img src="qr-telegram.png" alt="QR-код телеграм"></div>
+        <div class="label">Телеграм</div>
+        <a href="https://t.me/med_c_molokom" target="_blank" rel="noopener">@med_c_molokom</a>
+      </div>
+      <div class="contact-card">
+        <div class="qr"><img src="qr-vk.png" alt="QR-код вконтакте"></div>
+        <div class="label">ВКонтакте</div>
+        <a href="https://m.vk.ru/aydar.gayfutdinov" target="_blank" rel="noopener">vk.ru/aydar.gayfutdinov</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  © 2026 Айдар Гайфутдинов · Репетитор по математике
+</footer>
+
+</body>
+</html>
